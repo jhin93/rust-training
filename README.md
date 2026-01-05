@@ -24,16 +24,24 @@ cargo --version
 - Better TOML
 
 # Rustlings 설치
-git clone https://github.com/rust-lang/rustlings.git
-cd rustlings
-cargo install --force --path .
-rustlings watch
+레포에서 cargo install rustlings 입력 → rustlings init → cd rustlings → rustlings
 
 # 계정 생성
 - Exercism: https://exercism.org/tracks/rust
 - LeetCode: https://leetcode.com
 ```
 
+
+**현재 프로젝트 구조 최적화:**
+```
+rust-training/
+├── rustlings/           # VSCode에서 에러 나도 무시
+│   └── exercises/       # 터미널로만 검증
+├── projects/            # 여기는 정상 작동
+│   ├── hello_world/
+│   └── ...
+└── notes/
+    └── notes.md
 ---
 
 ## Phase 1: Rust 기초 (Day 1-10)
