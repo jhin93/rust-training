@@ -5,7 +5,7 @@ Cargo.lock
 *.pdb
 
 # Rustlings
-rustlings/.rustlings/
+.rustlings/
 
 # IDE
 .vscode/
@@ -17,3 +17,5 @@ rustlings/.rustlings/
 # OS
 .DS_Store
 Thumbs.db
+
+README.md
