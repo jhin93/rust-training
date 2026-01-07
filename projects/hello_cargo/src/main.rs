@@ -1,5 +1,7 @@
 fn main() {
     println!("Hello, world!!!");
+    println!("Hello, world!!!");
+    println!("Hello, world!!!");
 }
 
 // cargo new로 새 프로젝트를 생성할 수 있습니다.
