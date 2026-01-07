@@ -3,7 +3,7 @@ fn main() { // main 함수는 특별한 함수로, 러스트 실행 프로그램
     // 이 코드가 함수 호출 코드였다면 ! 없이 println이라고 되어 있었을 것
 }
 
-// 1. rustc 명령어로 컴파일
+// 1. 'r'ustc' 명령어로 컴파일 compile
 // rustc main.rs
 // 2. ./main 명령어로 실행
 // ./main
