@@ -79,7 +79,7 @@ TODO:
 TODO:
 1. The Rust Book 읽기
    https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html
-   - Ch 3.1: Variables and Mutability
+   xx - Ch 3.1: Variables and Mutability
    - Ch 3.2: Data Types (전체 정독)
    
 2. 노트 정리 (VSCode에 notes.md 생성)
