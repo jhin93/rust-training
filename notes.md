@@ -89,3 +89,29 @@ Rust에서 이 둘을 선택할 때는 "변경의 의도"와 "불변성 유지"�
 불변성을 최대한 유지하는 것이 Rust의 철학이므로, shadowing을 선호하는 경우가 많습니다.
 학습/실무 팁: 초보 시 mut를 먼저 배우지만, 실무에서 shadowing이 더 자주 쓰임 
 (예: 웹 서버에서 요청 처리). 잘못 사용 시 러ntime 패닉보단 컴파일 에러로 잡힘.
+
+** str을 인자로 쓸때 &를 붙이는 이유(&str)
+string: &str에서 &를 붙이는 이유는 함수가 문자열의 소유권을 가져오지 않고, 빌려오기(borrow)만 하기 위함입니다.
+즉, 함수를 호출한 쪽(caller)이 여전히 문자열을 소유한 채로 유지하고, 함수 안에서는 그 문자열을 잠깐 읽기만 합니다.
+
+```rust
+let s = String::from("hello");  // s가 소유권을 가짐
+let slice = &s;                 // slice는 s를 빌려서 가리킴 (&str)
+```
+만약 &를 빼고 string: str이라고 썼다면? 
+- 컴파일 오류가 납니다.
+- 이유: str 타입은 크기가 고정되어 있지 않은 타입이라서 함수 인자로 직접 받을 수 없습니다.
+- str은 항상 &str 형태로만 사용됩니다. (Rust 공식 문서에서도 "str is almost always used as &str"라고 명시)
+
+*** '&' 붙일때와 안붙일떄
+```rust
+fn take_ownership(x: i32, string: String) {
+    println!("string: {}", string);
+}  // 함수가 끝나면서 string이 drop됨 (메모리 해제)
+
+fn main() {
+    let s = String::from("hello");
+    take_ownership(42, s);
+    println!("{}", s);  // <- 이 println!에서 에러 발생. take_ownership s의 소유권이 함수로 넘어갔음
+}
+```
