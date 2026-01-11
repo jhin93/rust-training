@@ -115,3 +115,13 @@ fn main() {
     println!("{}", s);  // <- 이 println!에서 에러 발생. take_ownership s의 소유권이 함수로 넘어갔음
 }
 ```
+
+** To specify return type 
+```rust
+// -> (type)
+fn another_function(x: i32, string: &str) -> i32 {
+    println!("number: {}", x);
+    println!("string: {}", string);
+    return x;
+}
+```
